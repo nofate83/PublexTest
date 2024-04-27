@@ -1,0 +1,56 @@
+{
+    "name": "AppControls",
+    "maps": [
+        {
+            "name": "ActionMap",
+            "id": "5a7bb439-5e91-4ccb-8470-6fabe3383609",
+            "actions": [
+                {
+                    "name": "TouchClick",
+                    "type": "Value",
+                    "id": "c8eb31f4-ce74-4785-bcf5-a1962e30de25",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e74f439f-5573-4d21-b6a8-20efbdac8924",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "App control scheme",
+            "bindingGroup": "App control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
