@@ -157,6 +157,7 @@ internal class Enemy : MonoBehaviour
             }
             yield return null;
         }
+        yield break;
     }
 
 }
