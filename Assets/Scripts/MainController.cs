@@ -58,6 +58,7 @@ internal class MainController : MonoBehaviour
         _timeLeft = _levelTimeLimit;
         StartCoroutine("LevelTimer");
         _player.StartGame();
+        _player.transform.position = _startPoint.position;
         foreach (Enemy enemy in _enemies)
         {
             enemy.StartGame();

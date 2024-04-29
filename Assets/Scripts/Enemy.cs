@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
+
 
 
 [Serializable]
@@ -43,7 +43,6 @@ internal class Enemy : MonoBehaviour
                 _job = Patrol();
                 break;
         }
-        StopAllCoroutines();
         StartCoroutine(_job);
     }
 
@@ -86,6 +85,11 @@ internal class Enemy : MonoBehaviour
 
     private IEnumerator Guard()
     {
+        Debug.Log($"Guard job started {Time.time} name {gameObject.name}");
+        if (gameObject.name == "Enemy2")
+        {
+            // Debug.Log($"angle is {angle}");
+        }
         while (_active)
         {
             transform.Rotate(Vector3.up, Time.deltaTime * 41);
@@ -132,6 +136,7 @@ internal class Enemy : MonoBehaviour
 
     private IEnumerator Hunt()
     {
+        Debug.Log($"Hunt job started {Time.time} {name}");
         while (_active)
         {
             if (InLineSight())
@@ -141,6 +146,7 @@ internal class Enemy : MonoBehaviour
             else
             {
                 StartCoroutine(_job);
+                Debug.Log($"Hunt stopped. Job is {_job} {Time.time} {gameObject.name}");
                 yield break;
             }
             
